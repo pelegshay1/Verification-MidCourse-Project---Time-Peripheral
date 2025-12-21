@@ -1,0 +1,186 @@
+# Coverage Report by instance with details
+# 
+# =================================================================================
+# === Instance: /timer_interface_sv_unit
+# === Design Unit: work.timer_interface_sv_unit
+# =================================================================================
+# 
+# Covergroup Coverage:
+#     Covergroups                      1        na        na    50.00%
+#         Coverpoints/Crosses          7        na        na        na
+#             Covergroup Bins         22         5        17    22.72%
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /timer_interface_sv_unit/TimerCoverage/cg_timer_all 
+#                                                        50.00%        100          -    Uncovered            
+#     covered/total bins:                                     5         22          -                      
+#     missing/total bins:                                    17         22          -                      
+#     % Hit:                                             22.72%        100          -                      
+#     Coverpoint cp_load_val                              0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#     Coverpoint cp_start                               100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint cp_flag_clear                          100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint cp_reload_en                            50.00%        100          -    Uncovered            
+#         covered/total bins:                                 1          2          -                      
+#         missing/total bins:                                 1          2          -                      
+#         % Hit:                                         50.00%        100          -                      
+#     Coverpoint cp_expired_status                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Cross cross_mode_and_load                           0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          8          -                      
+#         missing/total bins:                                 8          8          -                      
+#         % Hit:                                          0.00%        100          -                      
+#     Cross cross_mode_and_clear                          0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#  Covergroup instance \/timer_interface_sv_unit::TimerCoverage::cg_timer_all  
+#                                                        50.00%        100          -    Uncovered            
+#     covered/total bins:                                     5         22          -                      
+#     missing/total bins:                                    17         22          -                      
+#     % Hit:                                             22.72%        100          -                      
+#     Coverpoint cp_load_val                              0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#         bin b_zero                                          0          1          -    ZERO                 
+#         bin b_small                                         0          1          -    ZERO                 
+#         bin b_mid                                           0          1          -    ZERO                 
+#         bin b_max                                           0          1          -    ZERO                 
+#     Coverpoint cp_start                               100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin start_trigger                                   3          1          -    Covered              
+#     Coverpoint cp_flag_clear                          100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin read_clear                                      6          1          -    Covered              
+#         bin write_clear                                     1          1          -    Covered              
+#     Coverpoint cp_reload_en                            50.00%        100          -    Uncovered            
+#         covered/total bins:                                 1          2          -                      
+#         missing/total bins:                                 1          2          -                      
+#         % Hit:                                         50.00%        100          -                      
+#         bin one_shot                                        3          1          -    Covered              
+#         bin auto_reload                                     0          1          -    ZERO                 
+#     Coverpoint cp_expired_status                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin expired_event                                   2          1          -    Covered              
+#     Cross cross_mode_and_load                           0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          8          -                      
+#         missing/total bins:                                 8          8          -                      
+#         % Hit:                                          0.00%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <*,*>                                       0          1          8    ZERO                 
+#     Cross cross_mode_and_clear                          0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <*,*>                                       0          1          4    ZERO                 
+# 
+# COVERGROUP COVERAGE:
+# ----------------------------------------------------------------------------------------------------------
+# Covergroup                                             Metric       Goal       Bins    Status               
+#                                                                                                          
+# ----------------------------------------------------------------------------------------------------------
+#  TYPE /timer_interface_sv_unit/TimerCoverage/cg_timer_all 
+#                                                        50.00%        100          -    Uncovered            
+#     covered/total bins:                                     5         22          -                      
+#     missing/total bins:                                    17         22          -                      
+#     % Hit:                                             22.72%        100          -                      
+#     Coverpoint cp_load_val                              0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#     Coverpoint cp_start                               100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint cp_flag_clear                          100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Coverpoint cp_reload_en                            50.00%        100          -    Uncovered            
+#         covered/total bins:                                 1          2          -                      
+#         missing/total bins:                                 1          2          -                      
+#         % Hit:                                         50.00%        100          -                      
+#     Coverpoint cp_expired_status                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#     Cross cross_mode_and_load                           0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          8          -                      
+#         missing/total bins:                                 8          8          -                      
+#         % Hit:                                          0.00%        100          -                      
+#     Cross cross_mode_and_clear                          0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#  Covergroup instance \/timer_interface_sv_unit::TimerCoverage::cg_timer_all  
+#                                                        50.00%        100          -    Uncovered            
+#     covered/total bins:                                     5         22          -                      
+#     missing/total bins:                                    17         22          -                      
+#     % Hit:                                             22.72%        100          -                      
+#     Coverpoint cp_load_val                              0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#         bin b_zero                                          0          1          -    ZERO                 
+#         bin b_small                                         0          1          -    ZERO                 
+#         bin b_mid                                           0          1          -    ZERO                 
+#         bin b_max                                           0          1          -    ZERO                 
+#     Coverpoint cp_start                               100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin start_trigger                                   3          1          -    Covered              
+#     Coverpoint cp_flag_clear                          100.00%        100          -    Covered              
+#         covered/total bins:                                 2          2          -                      
+#         missing/total bins:                                 0          2          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin read_clear                                      6          1          -    Covered              
+#         bin write_clear                                     1          1          -    Covered              
+#     Coverpoint cp_reload_en                            50.00%        100          -    Uncovered            
+#         covered/total bins:                                 1          2          -                      
+#         missing/total bins:                                 1          2          -                      
+#         % Hit:                                         50.00%        100          -                      
+#         bin one_shot                                        3          1          -    Covered              
+#         bin auto_reload                                     0          1          -    ZERO                 
+#     Coverpoint cp_expired_status                      100.00%        100          -    Covered              
+#         covered/total bins:                                 1          1          -                      
+#         missing/total bins:                                 0          1          -                      
+#         % Hit:                                        100.00%        100          -                      
+#         bin expired_event                                   2          1          -    Covered              
+#     Cross cross_mode_and_load                           0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          8          -                      
+#         missing/total bins:                                 8          8          -                      
+#         % Hit:                                          0.00%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <*,*>                                       0          1          8    ZERO                 
+#     Cross cross_mode_and_clear                          0.00%        100          -    ZERO                 
+#         covered/total bins:                                 0          4          -                      
+#         missing/total bins:                                 4          4          -                      
+#         % Hit:                                          0.00%        100          -                      
+#         Auto, Default and User Defined Bins:
+#             bin <*,*>                                       0          1          4    ZERO                 
+# 
+# TOTAL COVERGROUP COVERAGE: 50.00%  COVERGROUP TYPES: 1
+# 
+# Total Coverage By Instance (filtered view): 50.00%
+# 

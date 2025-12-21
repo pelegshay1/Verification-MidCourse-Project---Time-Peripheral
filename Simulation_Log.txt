@@ -1,0 +1,1123 @@
+# Reading pref.tcl
+# //  Questa Sim-64
+# //  Version 2025.1_2 win64 Apr  7 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# vsim mid_course_project_opt -voptargs="+acc" -sv_seed 1 -gui -do "add wave -r /*; run -all" 
+# Start time: 21:03:16 on Dec 19,2025
+# Loading sv_std.std
+# Loading work.design_params_pkg(fast)
+# Loading work.timer_interface_sv_unit(fast)
+# Loading work.tb_top(fast)
+# Loading work.timer_if(fast__2)
+# Loading work.timer_periph(fast)
+# Loading work.timer_assertions(fast)
+# Loading work.timer_if(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'debug_counter'. The port definition is at: design/timer_periph.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/dut_inst File: verification/tb_top.sv Line: 38
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'wdata'. The port definition is at: verification/timer_assertions.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/my_assertions File: verification/tb_top.sv Line: 53
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (1) for port 'internal_count'. The port definition is at: verification/timer_assertions.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top/my_assertions File: verification/tb_top.sv Line: 53
+# add wave -r /*
+#  run -all
+# [Test] Building Verification Agent Components...
+# [Test] Verification Agent successfully built.
+# [Generator] Starting to generate 100 transactions.
+# [                   0ns] Generator: Successfully randomized transaction #0.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x2cf2258b
+# [Monitor] Starting bus observation at time 0
+# [Checker] Starting run phase at time 0
+# [                5000ns] Generator: Successfully randomized transaction #1.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe28bcb83
+# [               10000ns] Generator: Successfully randomized transaction #2.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x99fe1ca5
+# [               15000ns] Generator: Successfully randomized transaction #3.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x438cc986
+# [               20000] Reset released.
+# [               20000ns] Generator: Successfully randomized transaction #4.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x64c51879
+# [               25000ns] Generator: Successfully randomized transaction #5.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6f3c6509
+# [Driver] Starting bus driving loop at time 25000
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x2cf2258b
+# [               30000ns] Generator: Successfully randomized transaction #6.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xc3873fc6
+# [               35000ns] Generator: Successfully randomized transaction #7.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x52149bdc
+# [               40000ns] Generator: Successfully randomized transaction #8.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xe98672d7
+# [               45000ns] Generator: Successfully randomized transaction #9.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xd60212bb
+# [               50000ns] Generator: Successfully randomized transaction #10.
+# [GEN-OUT] Type: READ_OP, Addr: 0x04, RDATA: 0x0000000c
+# [               55000ns] Generator: Successfully randomized transaction #11.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0xc3fd97cd
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 75 ns Started: 45 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe28bcb83
+# [              100000ns] Generator: Successfully randomized transaction #12.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x599387ee
+# [              105000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x08, Data: 0x00000000
+# [              105000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [CHK-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [RefModel] Read STATUS (0x00000000) and Cleared.
+# [Checker] SUCCESS: Read 0x00000000 from ADDR 0x08. Expected=Actual.
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 125 ns Started: 95 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 145 ns Started: 115 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 155 ns Started: 125 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe28bcb83
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x99fe1ca5
+# [              180000ns] Generator: Successfully randomized transaction #13.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x0c56ceee
+# [              185000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0xe28bcb83
+# [              185000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe28bcb83
+# [CHK-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe28bcb83
+# ** Warning: Write to unmapped address 0x0c
+#    Time: 185 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 205 ns Started: 175 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 225 ns Started: 195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x99fe1ca5
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x438cc986
+# [              250000ns] Generator: Successfully randomized transaction #14.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x830552d8
+# [              255000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0x99fe1ca5
+# [              255000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x99fe1ca5
+# [CHK-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x99fe1ca5
+# ** Warning: Write to unmapped address 0x0c
+#    Time: 255 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 275 ns Started: 245 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 295 ns Started: 265 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 305 ns Started: 275 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x438cc986
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x64c51879
+# [              330000ns] Generator: Successfully randomized transaction #15.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xa1daf600
+# [              335000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0x438cc986
+# [              335000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x438cc986
+# [CHK-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x438cc986
+# ** Warning: Write to unmapped address 0x08
+#    Time: 335 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 355 ns Started: 325 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 375 ns Started: 345 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 385 ns Started: 355 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6f3c6509
+# [              410000ns] Generator: Successfully randomized transaction #16.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8b55cc11
+# [              415000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x0c, Data: 0x00000000
+# [              415000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [CHK-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [Checker] SUCCESS: Read 0x00000000 from ADDR 0x0c. Expected=Actual.
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 435 ns Started: 405 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 455 ns Started: 425 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6f3c6509
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0xc3873fc6
+# [              480000ns] Generator: Successfully randomized transaction #17.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x9364518e
+# [              485000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0x6f3c6509
+# [              485000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6f3c6509
+# [CHK-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6f3c6509
+# ** Warning: Write to unmapped address 0x0c
+#    Time: 485 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 505 ns Started: 475 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 525 ns Started: 495 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0xc3873fc6
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x52149bdc
+# [              550000ns] Generator: Successfully randomized transaction #18.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x6123d1ec
+# [              555000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0xc3873fc6
+# [              555000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xc3873fc6
+# [CHK-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0xc3873fc6
+# ** Warning: Write to unmapped address 0x08
+#    Time: 555 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 575 ns Started: 545 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 595 ns Started: 565 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 605 ns Started: 575 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x52149bdc
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xe98672d7
+# [              630000ns] Generator: Successfully randomized transaction #19.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xc553f3e9
+# [              635000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0x52149bdc
+# [              635000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x52149bdc
+# [CHK-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x52149bdc
+# ** Warning: Write to unmapped address 0x08
+#    Time: 635 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 655 ns Started: 625 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 675 ns Started: 645 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xd60212bb
+# [              700000ns] Generator: Successfully randomized transaction #20.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x8a3b91cc
+# [              705000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x08, Data: 0x00000000
+# [              705000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [CHK-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [RefModel] Read STATUS (0x00000000) and Cleared.
+# [Checker] SUCCESS: Read 0x00000000 from ADDR 0x08. Expected=Actual.
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 725 ns Started: 695 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 745 ns Started: 715 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 755 ns Started: 725 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x04, RDATA: 0x0000000c
+# [              780000ns] Generator: Successfully randomized transaction #21.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x36873144
+# [              785000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x08, Data: 0x00000000
+# [              785000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [CHK-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [RefModel] Read STATUS (0x00000000) and Cleared.
+# [Checker] SUCCESS: Read 0x00000000 from ADDR 0x08. Expected=Actual.
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 805 ns Started: 775 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 825 ns Started: 795 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 835 ns Started: 805 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x04, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0xc3fd97cd
+# [              860000ns] Generator: Successfully randomized transaction #22.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8965d2d9
+# [              865000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x04, Data: 0x00000000
+# [              865000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x04, RDATA: 0x00000000
+# [CHK-IN] Type: READ_OP, Addr: 0x04, RDATA: 0x00000000
+# [Checker] SUCCESS: Read 0x00000000 from ADDR 0x04. Expected=Actual.
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 885 ns Started: 855 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 905 ns Started: 875 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 915 ns Started: 885 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0xc3fd97cd
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x599387ee
+# [              940000ns] Generator: Successfully randomized transaction #23.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xf8bcd2b5
+# [              945000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x00, Data: 0xc3fd97cd
+# [              945000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0xc3fd97cd
+# [CHK-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0xc3fd97cd
+# [RefModel] Wrote 0xc3fd97cd to CONTROL
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 945 ns Started: 945 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 965 ns Started: 935 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 985 ns Started: 955 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 995 ns Started: 965 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x599387ee
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x0c56ceee
+# [             1020000ns] Generator: Successfully randomized transaction #24.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x47a17ba8
+# [             1025000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0x599387ee
+# [             1025000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x599387ee
+# [CHK-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x599387ee
+# ** Warning: Write to unmapped address 0x08
+#    Time: 1025 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1045 ns Started: 1015 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1065 ns Started: 1035 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1075 ns Started: 1045 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x830552d8
+# [             1100000ns] Generator: Successfully randomized transaction #25.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xd475d762
+# [             1105000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x08, Data: 0x00000001
+# [             1105000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [CHK-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [RefModel] Read STATUS (0x00000000) and Cleared.
+# ** Error: [Checker] MISMATCH: Read ADDR 0x08. Expected 0x00000000, Got 0x00000001.
+#    Time: 1105 ns  Scope: timer_interface_sv_unit.TimerChecker.process_transaction File: verification/TimerChecker.sv Line: 183
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1125 ns Started: 1095 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1145 ns Started: 1115 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1155 ns Started: 1125 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x830552d8
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xa1daf600
+# [             1180000ns] Generator: Successfully randomized transaction #26.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x128c5381
+# [             1185000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0x830552d8
+# [             1185000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x830552d8
+# [CHK-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x830552d8
+# ** Warning: Write to unmapped address 0x08
+#    Time: 1185 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1205 ns Started: 1175 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1225 ns Started: 1195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1235 ns Started: 1205 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xa1daf600
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8b55cc11
+# [             1260000ns] Generator: Successfully randomized transaction #27.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xa93ff74b
+# [             1265000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0xa1daf600
+# [             1265000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xa1daf600
+# [CHK-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xa1daf600
+# ** Warning: Write to unmapped address 0x0c
+#    Time: 1265 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1285 ns Started: 1255 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1305 ns Started: 1275 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1315 ns Started: 1285 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8b55cc11
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x9364518e
+# [             1340000ns] Generator: Successfully randomized transaction #28.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6b84de5f
+# [             1345000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x00, Data: 0x8b55cc11
+# [             1345000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8b55cc11
+# [CHK-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8b55cc11
+# [RefModel] Wrote 0x8b55cc11 to CONTROL
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 1345 ns Started: 1345 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1365 ns Started: 1335 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1385 ns Started: 1355 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x9364518e
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x6123d1ec
+# [             1410000ns] Generator: Successfully randomized transaction #29.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xa2d79ed2
+# [             1415000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0x9364518e
+# [             1415000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x9364518e
+# [CHK-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x9364518e
+# ** Warning: Write to unmapped address 0x0c
+#    Time: 1415 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1435 ns Started: 1405 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1455 ns Started: 1425 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1465 ns Started: 1435 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x6123d1ec
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xc553f3e9
+# [             1490000ns] Generator: Successfully randomized transaction #30.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xadb4da42
+# [             1495000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0x6123d1ec
+# [             1495000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x6123d1ec
+# [CHK-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x6123d1ec
+# ** Warning: Write to unmapped address 0x08
+#    Time: 1495 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1515 ns Started: 1485 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1535 ns Started: 1505 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1545 ns Started: 1515 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xc553f3e9
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x8a3b91cc
+# [             1570000ns] Generator: Successfully randomized transaction #31.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x40ab565e
+# [             1575000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0xc553f3e9
+# [             1575000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xc553f3e9
+# [CHK-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xc553f3e9
+# ** Warning: Write to unmapped address 0x0c
+#    Time: 1575 ns  Scope: timer_interface_sv_unit.TimerReferenceModel.predict_write File: verification/TimerChecker.sv Line: 48
+# Checker: Processed 20 transactions. Reached limit. Exiting.
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1595 ns Started: 1565 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1615 ns Started: 1585 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [Test] All components finished. Simulation time: 1625000
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1625 ns Started: 1595 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x8a3b91cc
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x36873144
+# [             1650000ns] Generator: Successfully randomized transaction #32.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xb9227c70
+# [             1655000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0x8a3b91cc
+# [             1655000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x8a3b91cc
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1675 ns Started: 1645 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1695 ns Started: 1665 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8965d2d9
+# [             1720000ns] Generator: Successfully randomized transaction #33.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xfceb7dea
+# [             1725000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x08, Data: 0x00000001
+# [             1725000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1745 ns Started: 1715 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1765 ns Started: 1735 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1775 ns Started: 1745 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8965d2d9
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xf8bcd2b5
+# [             1800000ns] Generator: Successfully randomized transaction #34.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x119378b0
+# [             1805000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x00, Data: 0x8965d2d9
+# [             1805000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0x8965d2d9
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 1805 ns Started: 1805 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1825 ns Started: 1795 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1845 ns Started: 1815 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x47a17ba8
+# [             1870000ns] Generator: Successfully randomized transaction #35.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x82c7dc96
+# [             1875000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x08, Data: 0x00000001
+# [             1875000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1895 ns Started: 1865 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1915 ns Started: 1885 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xd475d762
+# [             1940000ns] Generator: Successfully randomized transaction #36.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x80c82cb1
+# [             1945000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x0c, Data: 0x00000000
+# [             1945000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1965 ns Started: 1935 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1985 ns Started: 1955 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 1995 ns Started: 1965 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x128c5381
+# [             2020000ns] Generator: Successfully randomized transaction #37.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xcfc037ec
+# [             2025000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x0c, Data: 0x00000000
+# [             2025000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2045 ns Started: 2015 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2065 ns Started: 2035 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2075 ns Started: 2045 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0xa93ff74b
+# [             2100000ns] Generator: Successfully randomized transaction #38.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0x9c9c1355
+# [             2105000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x0c, Data: 0x00000000
+# [             2105000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2125 ns Started: 2095 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2145 ns Started: 2115 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2155 ns Started: 2125 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0xa93ff74b
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6b84de5f
+# [             2180000ns] Generator: Successfully randomized transaction #39.
+# [GEN-OUT] Type: READ_OP, Addr: 0x04, RDATA: 0x00000004
+# [             2185000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x08, Data: 0xa93ff74b
+# [             2185000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xa93ff74b
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2205 ns Started: 2175 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2225 ns Started: 2195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6b84de5f
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xa2d79ed2
+# [             2250000ns] Generator: Successfully randomized transaction #40.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x5c064a82
+# [             2255000] Coverage: Sampling transaction Type: WRITE_OP, Addr: 0x0c, Data: 0x6b84de5f
+# [             2255000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x6b84de5f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2275 ns Started: 2245 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2295 ns Started: 2265 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xadb4da42
+# [             2320000ns] Generator: Successfully randomized transaction #41.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xd8c7842f
+# [             2325000] Coverage: Sampling transaction Type: READ_OP, Addr: 0x0c, Data: 0x00000000
+# [             2325000ns] Monitor: Sent transaction to Scoreboard.
+# [MON-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2345 ns Started: 2315 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2365 ns Started: 2335 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xadb4da42
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x40ab565e
+# [             2390000ns] Generator: Successfully randomized transaction #42.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xe5a259e6
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2415 ns Started: 2385 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2435 ns Started: 2405 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x40ab565e
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xb9227c70
+# [             2460000ns] Generator: Successfully randomized transaction #43.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x9e7742ec
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2485 ns Started: 2455 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2505 ns Started: 2475 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xfceb7dea
+# [             2530000ns] Generator: Successfully randomized transaction #44.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x5c0f1cb3
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2555 ns Started: 2525 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2575 ns Started: 2545 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xfceb7dea
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x119378b0
+# [             2600000ns] Generator: Successfully randomized transaction #45.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x4927c222
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2625 ns Started: 2595 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2645 ns Started: 2615 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2655 ns Started: 2625 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x82c7dc96
+# [             2680000ns] Generator: Successfully randomized transaction #46.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0xa9c402f5
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2705 ns Started: 2675 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2725 ns Started: 2695 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x82c7dc96
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x80c82cb1
+# [             2750000ns] Generator: Successfully randomized transaction #47.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xb7a2f7a3
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2775 ns Started: 2745 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2795 ns Started: 2765 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x80c82cb1
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0xcfc037ec
+# [             2820000ns] Generator: Successfully randomized transaction #48.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xc60ae5c1
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2845 ns Started: 2815 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2865 ns Started: 2835 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2875 ns Started: 2845 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0xcfc037ec
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0x9c9c1355
+# [             2900000ns] Generator: Successfully randomized transaction #49.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0xcb5b2459
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2925 ns Started: 2895 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2945 ns Started: 2915 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0x9c9c1355
+# [DRV-IN] Type: READ_OP, Addr: 0x04, RDATA: 0x00000004
+# [             2970000ns] Generator: Successfully randomized transaction #50.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0x1fad76b5
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 2975 ns Started: 2975 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 2995 ns Started: 2965 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3015 ns Started: 2985 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x04, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x5c064a82
+# [             3040000ns] Generator: Successfully randomized transaction #51.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x21b0cd00
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3065 ns Started: 3035 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3085 ns Started: 3055 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xd8c7842f
+# [             3110000ns] Generator: Successfully randomized transaction #52.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x7a85b762
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3135 ns Started: 3105 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3155 ns Started: 3125 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0xe5a259e6
+# [             3180000ns] Generator: Successfully randomized transaction #53.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x47d66512
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3205 ns Started: 3175 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3225 ns Started: 3195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0xe5a259e6
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x9e7742ec
+# [             3250000ns] Generator: Successfully randomized transaction #54.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x1dc81b52
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3275 ns Started: 3245 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3295 ns Started: 3265 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x5c0f1cb3
+# [             3320000ns] Generator: Successfully randomized transaction #55.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x6e378a98
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3345 ns Started: 3315 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3365 ns Started: 3335 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3375 ns Started: 3345 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x4927c222
+# [             3400000ns] Generator: Successfully randomized transaction #56.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x1a231da7
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3425 ns Started: 3395 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3445 ns Started: 3415 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3455 ns Started: 3425 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0xa9c402f5
+# [             3480000ns] Generator: Successfully randomized transaction #57.
+# [GEN-OUT] Type: READ_OP, Addr: 0x00, RDATA: 0x77723995
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3505 ns Started: 3475 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3525 ns Started: 3495 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3535 ns Started: 3505 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0xa9c402f5
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xb7a2f7a3
+# [             3560000ns] Generator: Successfully randomized transaction #58.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x925f19a2
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 3565 ns Started: 3565 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3585 ns Started: 3555 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3605 ns Started: 3575 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xc60ae5c1
+# [             3630000ns] Generator: Successfully randomized transaction #59.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x1f02b9f4
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3655 ns Started: 3625 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3675 ns Started: 3645 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0xcb5b2459
+# [             3700000ns] Generator: Successfully randomized transaction #60.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x77f7096f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3725 ns Started: 3695 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3745 ns Started: 3715 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3755 ns Started: 3725 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0xcb5b2459
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0x1fad76b5
+# [             3780000ns] Generator: Successfully randomized transaction #61.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x46a234a4
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 3785 ns Started: 3785 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3805 ns Started: 3775 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3825 ns Started: 3795 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3835 ns Started: 3805 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0x1fad76b5
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x21b0cd00
+# [             3860000ns] Generator: Successfully randomized transaction #62.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xa80a46b4
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 3865 ns Started: 3865 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3885 ns Started: 3855 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3905 ns Started: 3875 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x7a85b762
+# [             3930000ns] Generator: Successfully randomized transaction #63.
+# [GEN-OUT] Type: READ_OP, Addr: 0x04, RDATA: 0x0000000d
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3955 ns Started: 3925 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3975 ns Started: 3945 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 3985 ns Started: 3955 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x47d66512
+# [             4010000ns] Generator: Successfully randomized transaction #64.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x2fee2142
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4035 ns Started: 4005 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4055 ns Started: 4025 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4065 ns Started: 4035 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x47d66512
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x1dc81b52
+# [             4090000ns] Generator: Successfully randomized transaction #65.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xb0f61fd2
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4115 ns Started: 4085 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4135 ns Started: 4105 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4145 ns Started: 4115 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x6e378a98
+# [             4170000ns] Generator: Successfully randomized transaction #66.
+# [GEN-OUT] Type: READ_OP, Addr: 0x00, RDATA: 0xd8a3adf7
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4195 ns Started: 4165 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4215 ns Started: 4185 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4225 ns Started: 4195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x1a231da7
+# [             4250000ns] Generator: Successfully randomized transaction #67.
+# [GEN-OUT] Type: READ_OP, Addr: 0x00, RDATA: 0x9e646299
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4275 ns Started: 4245 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4295 ns Started: 4265 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4305 ns Started: 4275 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x1a231da7
+# [DRV-IN] Type: READ_OP, Addr: 0x00, RDATA: 0x77723995
+# [             4330000ns] Generator: Successfully randomized transaction #68.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x241c506b
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4355 ns Started: 4325 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4375 ns Started: 4345 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x00, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x925f19a2
+# [             4400000ns] Generator: Successfully randomized transaction #69.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x00, WDATA: 0xafc715ff
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4425 ns Started: 4395 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4445 ns Started: 4415 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x1f02b9f4
+# [             4470000ns] Generator: Successfully randomized transaction #70.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x0ff48315
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4495 ns Started: 4465 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4515 ns Started: 4485 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x1f02b9f4
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x77f7096f
+# [             4540000ns] Generator: Successfully randomized transaction #71.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x68400d41
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4565 ns Started: 4535 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4585 ns Started: 4555 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4595 ns Started: 4565 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x77f7096f
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x46a234a4
+# [             4620000ns] Generator: Successfully randomized transaction #72.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000010
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4645 ns Started: 4615 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4665 ns Started: 4635 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x46a234a4
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xa80a46b4
+# [             4690000ns] Generator: Successfully randomized transaction #73.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x36af06ef
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4715 ns Started: 4685 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4735 ns Started: 4705 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4745 ns Started: 4715 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x04, RDATA: 0x0000000d
+# [             4770000ns] Generator: Successfully randomized transaction #74.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x42dba250
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4795 ns Started: 4765 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4815 ns Started: 4785 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4825 ns Started: 4795 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x04, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x2fee2142
+# [             4850000ns] Generator: Successfully randomized transaction #75.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000012
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4875 ns Started: 4845 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4895 ns Started: 4865 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4905 ns Started: 4875 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xb0f61fd2
+# [             4930000ns] Generator: Successfully randomized transaction #76.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x8db5958e
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4955 ns Started: 4925 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4975 ns Started: 4945 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 4985 ns Started: 4955 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x00, RDATA: 0xd8a3adf7
+# [             5010000ns] Generator: Successfully randomized transaction #77.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x11246bfa
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5035 ns Started: 5005 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5055 ns Started: 5025 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5065 ns Started: 5035 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x00, RDATA: 0x00000000
+# [DRV-IN] Type: READ_OP, Addr: 0x00, RDATA: 0x9e646299
+# [             5090000ns] Generator: Successfully randomized transaction #78.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe21247a2
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5115 ns Started: 5085 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5135 ns Started: 5105 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5145 ns Started: 5115 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x00, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x241c506b
+# [             5170000ns] Generator: Successfully randomized transaction #79.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x34019da4
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5195 ns Started: 5165 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5215 ns Started: 5185 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5225 ns Started: 5195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x241c506b
+# [DRV-IN] Type: WRITE_OP, Addr: 0x00, WDATA: 0xafc715ff
+# [             5250000ns] Generator: Successfully randomized transaction #80.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0x972818af
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5275 ns Started: 5245 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5295 ns Started: 5265 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5305 ns Started: 5275 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x00, WDATA: 0xafc715ff
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x0ff48315
+# [             5330000ns] Generator: Successfully randomized transaction #81.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0xe0d5fe3a
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 5335 ns Started: 5335 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5355 ns Started: 5325 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5375 ns Started: 5345 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x0ff48315
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x68400d41
+# ** Error: Assertion Failed: Status flag not cleared after CLR_STATUS command!
+#    Time: 5395 ns Started: 5385 ns  Scope: tb_top.my_assertions.a_status_clear File: verification/timer_assertions.sv Line: 47
+# [             5400000ns] Generator: Successfully randomized transaction #82.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x97fe265f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5425 ns Started: 5395 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5445 ns Started: 5415 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5455 ns Started: 5425 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x68400d41
+# [DRV-IN] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000010
+# ** Error: Assertion Failed: Status flag not cleared after CLR_STATUS command!
+#    Time: 5475 ns Started: 5465 ns  Scope: tb_top.my_assertions.a_status_clear File: verification/timer_assertions.sv Line: 47
+# [             5480000ns] Generator: Successfully randomized transaction #83.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x8d2393f5
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5505 ns Started: 5475 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5525 ns Started: 5495 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000010
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x36af06ef
+# [             5550000ns] Generator: Successfully randomized transaction #84.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x79d783a0
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5575 ns Started: 5545 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5595 ns Started: 5565 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x36af06ef
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x42dba250
+# [             5620000ns] Generator: Successfully randomized transaction #85.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x21388fac
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5645 ns Started: 5615 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5665 ns Started: 5635 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5675 ns Started: 5645 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000012
+# [             5700000ns] Generator: Successfully randomized transaction #86.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x2dddf25e
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5725 ns Started: 5695 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5745 ns Started: 5715 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000012
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x8db5958e
+# [             5770000ns] Generator: Successfully randomized transaction #87.
+# [GEN-OUT] Type: READ_OP, Addr: 0x04, RDATA: 0x0000000c
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5795 ns Started: 5765 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5815 ns Started: 5785 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5825 ns Started: 5795 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x11246bfa
+# [             5850000ns] Generator: Successfully randomized transaction #88.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xb2e976c2
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5875 ns Started: 5845 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 5895 ns Started: 5895 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5895 ns Started: 5865 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5905 ns Started: 5875 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe21247a2
+# [             5930000ns] Generator: Successfully randomized transaction #89.
+# [GEN-OUT] Type: READ_OP, Addr: 0x0c, RDATA: 0xdb99e840
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5955 ns Started: 5925 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5975 ns Started: 5945 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 5985 ns Started: 5955 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xe21247a2
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x34019da4
+# [             6010000ns] Generator: Successfully randomized transaction #90.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x92994b9b
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6035 ns Started: 6005 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6055 ns Started: 6025 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x34019da4
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0x972818af
+# [             6080000ns] Generator: Successfully randomized transaction #91.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x34668f3c
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6105 ns Started: 6075 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6125 ns Started: 6095 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0xe0d5fe3a
+# [             6150000ns] Generator: Successfully randomized transaction #92.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x733315ea
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6175 ns Started: 6145 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6195 ns Started: 6165 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6205 ns Started: 6175 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0xe0d5fe3a
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x97fe265f
+# [             6230000ns] Generator: Successfully randomized transaction #93.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x08, WDATA: 0x19788b6f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6255 ns Started: 6225 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6275 ns Started: 6245 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6285 ns Started: 6255 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x97fe265f
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x8d2393f5
+# ** Error: Assertion Failed: Status flag not cleared after CLR_STATUS command!
+#    Time: 6305 ns Started: 6295 ns  Scope: tb_top.my_assertions.a_status_clear File: verification/timer_assertions.sv Line: 47
+# [             6310000ns] Generator: Successfully randomized transaction #94.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0xf8f8c50f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6335 ns Started: 6305 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6355 ns Started: 6325 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6365 ns Started: 6335 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x79d783a0
+# [             6390000ns] Generator: Successfully randomized transaction #95.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000011
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6415 ns Started: 6385 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6435 ns Started: 6405 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6445 ns Started: 6415 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x79d783a0
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x21388fac
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 6465 ns Started: 6465 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# [             6470000ns] Generator: Successfully randomized transaction #96.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x330ef095
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6495 ns Started: 6465 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6515 ns Started: 6485 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6525 ns Started: 6495 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x21388fac
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x2dddf25e
+# [             6550000ns] Generator: Successfully randomized transaction #97.
+# [GEN-OUT] Type: READ_OP, Addr: 0x08, RDATA: 0x7ca498c4
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6575 ns Started: 6545 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6595 ns Started: 6565 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x2dddf25e
+# [DRV-IN] Type: READ_OP, Addr: 0x04, RDATA: 0x0000000c
+# [             6620000ns] Generator: Successfully randomized transaction #98.
+# [GEN-OUT] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xaca3d70d
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6645 ns Started: 6615 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6665 ns Started: 6635 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x04, RDATA: 0x00000012
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xb2e976c2
+# [             6690000ns] Generator: Successfully randomized transaction #99.
+# [GEN-OUT] Type: READ_OP, Addr: 0x00, RDATA: 0x922aebb9
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6715 ns Started: 6685 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6735 ns Started: 6705 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6745 ns Started: 6715 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: READ_OP, Addr: 0x0c, RDATA: 0xdb99e840
+# [Generator] Finished generating transactions. Exiting.                6770
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6795 ns Started: 6765 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6815 ns Started: 6785 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x0c, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x92994b9b
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 6845 ns Started: 6845 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6865 ns Started: 6835 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6885 ns Started: 6855 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x92994b9b
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x34668f3c
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6935 ns Started: 6905 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6955 ns Started: 6925 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 6965 ns Started: 6935 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x34668f3c
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x733315ea
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7015 ns Started: 6985 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7035 ns Started: 7005 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: WRITE_OP, Addr: 0x08, WDATA: 0x19788b6f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7085 ns Started: 7055 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7105 ns Started: 7075 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x08, WDATA: 0x19788b6f
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0xf8f8c50f
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7155 ns Started: 7125 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7175 ns Started: 7145 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000000
+# [DRV-IN] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000011
+# ** Error: Assertion Failed: Expired flag asserted but counter is not zero!
+#    Time: 7225 ns Started: 7225 ns  Scope: tb_top.my_assertions.a_expiration_logic File: verification/timer_assertions.sv Line: 35
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7225 ns Started: 7195 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7245 ns Started: 7215 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7255 ns Started: 7225 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x04, WDATA: 0x00000011
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x330ef095
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7305 ns Started: 7275 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7325 ns Started: 7295 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0x330ef095
+# [DRV-IN] Type: READ_OP, Addr: 0x08, RDATA: 0x7ca498c4
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7375 ns Started: 7345 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7395 ns Started: 7365 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7405 ns Started: 7375 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: READ_OP, Addr: 0x08, RDATA: 0x00000001
+# [DRV-IN] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xaca3d70d
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7455 ns Started: 7425 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# ** Error: Assertion Failed: REQ stayed high for >3 cycles without GNT!
+#    Time: 7475 ns Started: 7445 ns  Scope: tb_top.my_assertions.a_req_timeout File: verification/timer_assertions.sv Line: 23
+# [DRV-DONE] Type: WRITE_OP, Addr: 0x0c, WDATA: 0xaca3d70d
+# [DRV-IN] Type: READ_OP, Addr: 0x00, RDATA: 0x922aebb9
+# ** Note: $finish    : verification/tb_top.sv(82)
+#    Time: 7495 ns  Iteration: 4  Instance: /tb_top
